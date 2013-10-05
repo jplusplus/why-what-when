@@ -16,3 +16,11 @@
         <p>{{event.description}}</p>
     </div>
 </div>
+<div class="controls">
+    <button ng-click="goBack()" class="back" ng-disabled="!canBack">
+        <i class="icon-minus-sign"></i>
+    </button>
+    <button ng-click="goForward()" class="forward" ng-disabled="!canForward">
+        <i class="icon-plus-sign"></i>
+    </button>
+</div>
