@@ -27,7 +27,24 @@ nav  {
 .timeline {
   .timeline-holder {
     min-height: 100px;
-    background-color: #BBB;
+    transition: background-color 250ms linear;
+
+    &.step-0 {
+      background-color: #B4D567;
+    }
+
+    &.step-1 {
+      background-color: #5CC48E;
+    }
+
+    &.step-2 {
+      background-color: #38A8AC;
+    }
+
+    &.step-3 {
+      background-color: #82444D;
+    }
+
     .lapse {
         background-color: white;
         opacity: 0.7;
