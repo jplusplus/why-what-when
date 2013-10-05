@@ -2,6 +2,8 @@
     <h1  ng-bind="lapseTitle()" class="timeline-title"></h1>
     <div class="timeline-holder">
         <div class="lapse" ng-repeat="event in getEvents()" ng-style="lapseStyle(event)">
+            <div ng-repeat="sub_event in event.sub_events" ng-style="lapseStyle(sub_event, event)">
+            </div>
         </div>
     </div>
     <div class="zoom-controls">
