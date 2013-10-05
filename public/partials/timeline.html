@@ -1,5 +1,11 @@
 <div class="timeline">
-    <span class="timeline-title">{{title}}</span>
-    <div class="lapse" ng-repeat="event in events" ng-style="lapseStyle(event)">
+    <h1  ng-bind="lapseTitle()" class="timeline-title"></h1>
+    <div class="timeline-holder">
+        <div class="lapse" ng-repeat="event in getEvents()" ng-style="lapseStyle(event)">
+        </div>
+    </div>
+    <div class="zoom-controls">
+        <span class="zoom-control" ng-class="" ng-click="unzoomLapse()">-</span>&nbsp;/
+        <span class="zoom-control" ng-class="" ng-click="zoomLapse()">+</span>
     </div>
 </div>  
