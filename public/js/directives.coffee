@@ -2,28 +2,36 @@
     restrict : "E"
     replace : yes
     templateUrl : "/partials/timeline.html"
-    scope:
-        data: "="
-        startDate: "="
-        endDate: "="
+    scope: 
+        data: '='
     link : (scope, element, attrs) ->
         workspace = d3.select(element[0])
-        console.log element
         workspaceWidth = $(element).innerWidth()
         scale = d3.time.scale()
+        monitored = ['data']
+        scope.$watch 'data', ->update()
 
-        end = new Date()
-        begin = new Date(end.getFullYear())
-        
-        oneDayInMS  = 1000 * 60 * 60 * 24
-        # diffInDays = Math.floor((end.getTime() - begin.getTime()) / oneDayInMS)
-        # console.log "diff in days: ", diffInDays
-        timeDomain = scale.domain([begin, end])
+        update = ()->
+            console.log scope.data
+            scope.events = scope.data.events 
+            start_str = scope.data.begin_date
+            year = new Date(start_str).getFullYear()
+            begin = new Date(year)
+            end = new Date(31, 12, year)
+
+            scope.timeline = scale.domain([begin, end]).range([0, workspaceWidth])
+
+            scope.lapseStyle = (lapse)->
+                console.log lapse
+                beginOffsetBegin = scope.timeline(new Date(lapse.start_date))
+                endOffsetX = scope.timeline(new Date(lapse.end_date)) 
+
+                width = endOffsetX - beginOffsetBegin
+                style = 
+                    position: "absolute"
+                    left: beginOffsetBegin
+                    width: width
+                console.log style
 
 
-        addLapse: (begin, end=null)
-        console.log timeDomain
-
-
-
-]
+    ]
