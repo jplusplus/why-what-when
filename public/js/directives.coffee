@@ -34,7 +34,7 @@ MONTHS = [
                 scope.$watch monitor, ->update()
 
         update = ()->
-            scope.lapseStyle = (lapse)->
+            scope.lapseStyle = (lapse, parent_lapse)->
                 # console.log "lapseStyle(", lapse, ")"
                 return null unless lapse?
                 begin = new Date(lapse.start_date)
@@ -75,14 +75,10 @@ MONTHS = [
                     end_date: yearRange[1].toString()
                 }
             scope.getEvents = ()->
-                zoom = scope.zoomLevel
-                if zoom is 0
-                    return getTodayEvent()
-                else if zoom is 1 or zoom is 2
-                    return [scope.data]
-                else if zoom is 3
-                    return scope.data.sub_events
-
+                if scope.data?
+                    [scope.data, getTodayEvent()]
+                else
+                    [getTodayEvent()]
 
             scope.lapseTitle = ()->
                 zoom = scope.zoomLevel
