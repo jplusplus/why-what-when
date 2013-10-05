@@ -107,6 +107,39 @@ MONTHS = [
                     return "#{month_litteral} #{year}"
 
             scope.lapseTicks = ()->
+                if scope.zoomLevel is 2
+                    ticks = [0..11]
+                    _.map ticks, (i) =>
+                        d = new Date scope.data.start_date
+                        d = new Date (do d.getFullYear), i, 14
+                        {
+                            date : d
+                            label : d.toLocaleFormat "%b"
+                        }
+                else if scope.zoomLevel is 3
+                    current_month = new Date scope.data.start_date
+                    previous_month = new Date (do current_month.getYear), (do current_month.getMonth) + 1, 0
+                    ticks = [1..(do previous_month.getDate)]
+                    _.map ticks, (i) =>
+                        d = new Date (do current_month.getFullYear), (do current_month.getMonth), i
+                        {
+                            date : d
+                            label : do d.getDate
+                        }
+                else
+                    []
+
+            scope.tickStyle = (tick)->
+                return null unless tick?
+                begin = new Date(tick.date)
+                beginOffsetX = scope.timeline(begin)
+                left  = (beginOffsetX * 100 / workspaceWidth)
+                width = if scope.zoomLevel in [3] then 16 else 30
+                style =
+                    position: "absolute"
+                    left: "calc(#{left}% - #{width / 2}px)"
+                    width: width + 'px'
+                return style
 
             scope.zoomLapse = ()->
                 if scope.zoomLevel < MAX_ZOOM_LEVEL
