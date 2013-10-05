@@ -4,7 +4,9 @@
         <div ng-class="zoomLevel < 3 ? 'lapse clickable' : ' lapse'" 
              ng-repeat="event in getEvents() track by $index" 
              ng-style="lapseStyle(event)">
+             <h3 class="lapse-title">{{event.title}}</h3>
             <div ng-class="zoomLevel === 3 ? 'sub lapse clickable' : 'sub lapse'" ng-repeat="sub_event in event.sub_events track by $index" ng-style="lapseStyle(sub_event, event)">
+                <h3 class="lapse-title">{{sub_event.title}}</h3>
             </div>
         </div>
     </div>

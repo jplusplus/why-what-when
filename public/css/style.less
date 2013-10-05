@@ -37,7 +37,7 @@ nav  {
 
   .timeline-holder {
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     min-height: 100px;
     background-color: desaturate(lighten(@brand-primary, 10%), 11%);
     // transition: background-color 250ms linear;
@@ -47,10 +47,28 @@ nav  {
       transition: left 450ms linear, width 450ms ease-out;
       cursor: pointer;
       background-color: @brand-primary;
-      opacity: 1;
+      opacity: 0.7;
+      &.clickable {
+        .sub {
+          opacity: 0.2;
+        }
+      }
       &.sub {
-        opacity: 1;
+        top: 0;
         background-color: desaturate(@brand-secondary, 10%);
+      }
+      h3 {
+        position: relative;
+        width: 300px;
+        z-index: 10;
+        transition: opacity 250ms ease-in;
+        opacity: 0;
+      }
+      &.clickable:hover {
+        opacity: 1;
+        > h3 {
+          opacity: 1;
+        }
       }
     }
     .step-3 {
