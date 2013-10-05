@@ -17,10 +17,10 @@
     </div>
 </div>
 <div class="controls">
-    <button class="back" ng-disabled="{{!canBack}}">
+    <button ng-click="goBack()" class="back" ng-disabled="!canBack">
         <i class="icon-minus-sign"></i>
     </button>
-    <button class="forward" ng-disabled="{{!canForward}}">
+    <button ng-click="goForward()" class="forward" ng-disabled="!canForward">
         <i class="icon-plus-sign"></i>
     </button>
 </div>
