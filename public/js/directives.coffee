@@ -107,7 +107,21 @@ MONTHS = [
                     return "#{month_litteral} #{year}"
 
             scope.lapseTicks = ()->
-                if scope.zoomLevel is 2
+                if scope.zoomLevel is 1
+                    ticks = window.getDecadeRange(new Date scope.data.start_date)
+                    start = new Date (do ticks[0].getFullYear), 1, 1
+                    end = new Date (do ticks[1].getFullYear), 10, 31
+                    [
+                        {
+                            date : start
+                            label : start.toLocaleFormat "%Y"
+                        }
+                        {
+                            date : end
+                            label : end.toLocaleFormat "%Y"
+                        }
+                    ]
+                else if scope.zoomLevel is 2
                     ticks = [0..11]
                     _.map ticks, (i) =>
                         d = new Date scope.data.start_date
