@@ -1,0 +1,68 @@
+{
+    "start_date": "1962-10-14T00:00:01Z",
+    "end_date":"1962-10-28T23:59:59Z",
+    "title":"Cuba Crisis",
+    "description":"Cuban missile crisis",
+    "sub_events": [
+        {
+            "start_date":"1962-10-14T00:00:01Z",
+            "end_date": "1962-10-15T00:00:01Z",
+            "title":"Russia sends missles to Cuba",
+            "description":"Russia sends nuclear missles to Cuba. Mr. Kennedy is not amused.",
+            "image":"http://www.ussmullinnix.org/Grozny_27Oct62.jpg",
+            "video":"",
+            "audio":"",
+    "interactive":"",
+    "map":"",
+    "url":""
+        },
+        {
+            "start_date":"1962-10-16T00:00:01Z",
+            "end_date": "1962-10-17T00:00:01Z",
+            "title":"25 Soviet ships on way to Cuba",
+            "description":"Hoax or bloody reality?",
+            "image":"",
+            "video":"",
+            "audio":"",
+    "interactive":"",
+    "map":"",
+    "url":""
+        },
+        {
+            "start_date":"1962-10-19T00:00:01Z",
+            "end_date": "1962-10-21T00:00:01Z",
+            "title":"President John F. Kennedy reveals secret plan.",
+            "description":"President John F. Kennedy reveals his strategy for the next 24 hours.",
+            "image":"",
+            "video":"",
+            "audio":"",
+    "interactive":"",
+    "map":"",
+    "url":""
+        },
+        {
+            "start_date":"1962-10-22T00:00:01Z",
+            "end_date": "1962-10-26T00:00:01Z",
+            "title":"Mr Stevenson clashes with Mr Zorin",
+            "description":"The United States tonight demanded an immediate yes or no answer from Russia as to whether it had installed missiles in Cuba. But the Soviet delegate in the Security Council refused to answer at once.",
+            "image":"http://younghistorian.tumblr.com/image/34313782733",
+            "video":"",
+            "audio":"",
+    "interactive":"",
+    "map":"",
+    "url":""
+        },
+        {
+            "start_date":"1962-10-24T00:00:01Z",
+            "end_date": "1962-10-27T00:00:01Z",
+            "title":"Risk of reprisals not ignored",
+            "description":"On the highest authority it can be stated that President Kennedy took fully into account the risks of Russian reprisals before he ordered the quarantine of Cuba by American forces.",
+            "image":"",
+            "video":"",
+            "audio":"",
+    "interactive":"",
+    "map":"",
+    "url":""
+        }
+    ]
+}
