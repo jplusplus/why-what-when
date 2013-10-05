@@ -1,5 +1,5 @@
 doctype 5
-html
+html(ng-app="www")
   head
     //- title= title
     
@@ -12,6 +12,9 @@ html
     !=js('vendor/angular/angular-cookies')
     !=js('vendor/angular/angular-resource')
     !=js('app')
+    !=js('filters')
+    !=js('services')
+    !=js('controllers')
 
     block extrajs
 
