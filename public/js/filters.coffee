@@ -1,6 +1,5 @@
 angular.module("wwwFilters", []).filter('dateFilter', [() ->
     (array, start, end) ->
-        console.log start
         start = new Date start
         end = new Date end
         out = []
