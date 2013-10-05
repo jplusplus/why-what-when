@@ -56,7 +56,7 @@ MONTHS = [
                 return style
 
             getLitteralMonth = (date)->
-                return MONTHS[date.getMonth() - 1]
+                return MONTHS[date.getMonth()]
 
             getLapseRange = ()->
                 zoom = scope.zoomLevel
@@ -161,5 +161,5 @@ MONTHS = [
 
                # return unless scope.data? and scope.data.sub_events?
             lapseRange   = getLapseRange() 
-            scope.timeline = scale.domain(lapseRange).range([0, workspaceWidth])
+            scope.timeline = scale.domain(lapseRange).range([0, workspaceWidth - 25])
     ]

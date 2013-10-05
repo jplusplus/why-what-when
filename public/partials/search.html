@@ -1,16 +1,18 @@
-<nav>
-    <h3>Why What <span class="primary">When</span> ?</h3>
-    <form class="navbar-form">
-        <div class="form-group">
-            <input class="form-control"/>
-        </div>
-        <button type="submit" class="btn"><i class="icon-search"></i></button>
-    </form>
-</nav>
+<div class="row-fluid">
+    <div class="col-sg">
+        <h3>Why What <span class="primary">When</span> ?</h3>
+        <form class="form-inline">
+            <div class="form-group">
+                <input class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
+        </form>
+    </nav>
 
-<div ng-if="currentTopic" class="topic-extract">
-    <h3>{{ currentTopic.title }}</h3>
-    <p>{{ currentTopic.description }}</p>
+    <div ng-if="currentTopic" class="topic-extract">
+        <h3>{{ currentTopic.title }}</h3>
+        <p>{{ currentTopic.description }}</p>
+    </div>
 </div>
 <timeline data='currentTopic'></timeline>
 <div class="cards">
