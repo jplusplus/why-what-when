@@ -10,7 +10,8 @@
     "jade": "*",
     "coffee-script": "1.6.1",
     "connect-assets": "2.4.0",
-    "async": "0.2.9"
+    "async": "0.2.9",
+    "less": "~1.4.2"
   },
   "engines": {
     "node": ">=0.9.4"
