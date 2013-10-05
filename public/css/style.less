@@ -1,5 +1,10 @@
 @brand-primary: #FF0000;
 
+@step0color: #B4D567;
+@step1color: #5CC48E;
+@step2color: #38A8AC;
+@step3color: #82444D;
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -30,19 +35,19 @@ nav  {
     transition: background-color 250ms linear;
 
     &.step-0 {
-      background-color: #B4D567;
+      background-color: @step0color;
     }
 
     &.step-1 {
-      background-color: #5CC48E;
+      background-color: @step1color;
     }
 
     &.step-2 {
-      background-color: #38A8AC;
+      background-color: @step2color;
     }
 
     &.step-3 {
-      background-color: #82444D;
+      background-color: @step3color;
     }
 
     .lapse {
@@ -58,10 +63,25 @@ nav  {
     text-align: center;
     font-size: 1.2em;
     .zoom-control {
-      cursor: pointer;
-    }
+      background: transparent;
+      border: none;
+      color: #888;
 
+      &:hover {
+        color: #dedede;
+      }
+    }
   }
+
+  .legend {
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 15px;
+    .start { float: left; }
+    .end { float: right; }
+  }
+
 }
 
 .cards {

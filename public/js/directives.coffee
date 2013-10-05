@@ -58,13 +58,20 @@ MONTHS = [
                 event_date = new Date(scope.data.start_date) if scope.data?
                 if zoom is 0
                     range = window.getYearRange(new Date()) 
+                    scope.start = ""
+                    scope.end = ""
                 else if zoom is 1
                     range = window.getDecadeRange(event_date)
+                    scope.start = do range[0].getFullYear
+                    scope.end = do range[1].getFullYear
                 else if zoom is 2
                     range = window.getYearRange(event_date)
-
+                    scope.start = range[0].toLocaleFormat "%B"
+                    scope.end = range[1].toLocaleFormat "%B"
                 else if zoom is 3
                     range = window.getMonthRange(event_date)
+                    scope.start = do range[0].getDate
+                    scope.end = do range[1].getDate
                 return range
 
             getTodayEvent = ()->
@@ -82,7 +89,6 @@ MONTHS = [
                     return [scope.data]
                 else if zoom is 3
                     return scope.data.sub_events
-
 
             scope.lapseTitle = ()->
                 zoom = scope.zoomLevel
@@ -109,7 +115,6 @@ MONTHS = [
             scope.unzoomLapse = ()->
                 if scope.zoomLevel > 0
                     scope.zoomLevel--
-
 
                # return unless scope.data? and scope.data.sub_events?
             lapseRange   = getLapseRange() 
