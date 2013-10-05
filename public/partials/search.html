@@ -1,6 +1,6 @@
 <nav>
     <h3>Why What <span class="primary">When</span></h3>
-    <form class="navbar-form">    
+    <form class="navbar-form">
         <div class="form-group">
             <input class="form-control"/>
         </div>
@@ -10,3 +10,9 @@
 
 <h3 ng-if="topic">{{ topic.title }}</h3>
 <timeline></timeline>
+<div class="cards">
+    <div ng-repeat="event in data.sub_events | dateFilter:'1962-10-14T00:00:01Z':'1962-10-26T00:00:01Z'" class="card">
+        <div class="source">{{event.title}}</div>
+        <p>{{event.description}}</p>
+    </div>
+</div>
