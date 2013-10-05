@@ -31,7 +31,7 @@ angular
                 # Avoid a conflict with Django Template's tags
                 # Bind routes to the controllers
                 $routeProvider
-                    .when('/search/', 
+                    .when('/', 
                         controller: 'SearchCtrl'
                         templateUrl: "partials/search.html"
                         reloadOnSearch: false
