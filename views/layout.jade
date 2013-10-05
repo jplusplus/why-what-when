@@ -6,9 +6,14 @@ html
     !=css('style')
 
   body
-    .container-fluid
-        block content
-
+    block content
+    
+    !=js('vendor/angular/angular')
+    !=js('vendor/angular/angular-cookies')
+    !=js('vendor/angular/angular-resource')
     !=js('app')
+
+    block extrajs
+
 
     //- != js('controllers/')
