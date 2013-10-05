@@ -20,11 +20,7 @@ MONTHS = [
         data: '='
     link : (scope, element, attrs) ->
         MAX_ZOOM_LEVEL = 3
-        unless scope.data? and scope.zoomLevel?
-            scope.zoomLevel = 0
-        else 
-            scope.zoomLevel = 1
-        workspace = d3.select(element[0])
+        scope.zoomLevel = 0
         workspaceWidth = $(element).innerWidth()
         workspaceHeight = $(element).innerHeight()
         scale = d3.time.scale()
@@ -41,12 +37,20 @@ MONTHS = [
                 end = new Date(lapse.end_date)
                 beginOffsetX = scope.timeline(begin)
                 endOffsetX = scope.timeline(end)
-                width = Math.floor(endOffsetX - beginOffsetX) + 'px'
-                left  = (beginOffsetX * 100 / workspaceWidth) + '%'  
+                widthRaw = Math.floor(endOffsetX - beginOffsetX) 
+                width = widthRaw + 'px'
+                leftRatio  = ((beginOffsetX * 100) / workspaceWidth) + '%'
+                if parent_lapse? and parent_lapse isnt null
+                    parent_style = this.lapseStyle(parent_lapse)
+                    leftX = beginOffsetX - parent_style.leftRaw
+                    ratio =  (leftX * 100)  / parent_style.widthRaw
+                    leftRatio = ratio + '%'
                 style = 
                     position: "absolute"
-                    left: left
+                    left: leftRatio
+                    leftRaw: beginOffsetX
                     width: width
+                    widthRaw: widthRaw
                     height: workspaceHeight 
                 return style
 

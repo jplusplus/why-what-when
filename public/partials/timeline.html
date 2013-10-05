@@ -1,8 +1,10 @@
 <div class="timeline">
     <h1  ng-bind="lapseTitle()" class="timeline-title"></h1>
     <div class="timeline-holder step-{{zoomLevel}}">
-        <div ng-click="zoomLapse()" class="lapse" ng-repeat="event in getEvents()" ng-style="lapseStyle(event)">
-            <div ng-repeat="sub_event in event.sub_events" ng-style="lapseStyle(sub_event, event)">
+        <div ng-class="zoomLevel < 3 ? 'lapse clickable' : ' lapse'" 
+             ng-repeat="event in getEvents() track by $index" 
+             ng-style="lapseStyle(event)">
+            <div ng-class="zoomLevel === 3 ? 'sub lapse clickable' : 'sub lapse'" ng-repeat="sub_event in event.sub_events track by $index" ng-style="lapseStyle(sub_event, event)">
             </div>
         </div>
     </div>
@@ -10,4 +12,4 @@
         <span class="zoom-control" ng-class="" ng-click="unzoomLapse()">-</span>&nbsp;/
         <span class="zoom-control" ng-class="" ng-click="zoomLapse()">+</span>
     </div>
-</div>  
+</div>

@@ -1,10 +1,13 @@
-@brand-primary: #FF0000;
+@brand-primary: #252542;
+@brand-secondary: #AC79CD;
 
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #000;
   color: white;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a {
@@ -15,7 +18,7 @@ a {
 }
 
 .primary {
-    color: @brand-primary;
+    color: @brand-secondary;
 }
 
 nav  {
@@ -25,33 +28,33 @@ nav  {
 }
 
 .timeline {
+  overflow-x: hidden;
+
   .timeline-holder {
+    width: 100%;
+    overflow-x: hidden;
     min-height: 100px;
-    transition: background-color 250ms linear;
-
-    &.step-0 {
-      background-color: #B4D567;
-    }
-
-    &.step-1 {
-      background-color: #5CC48E;
-    }
-
-    &.step-2 {
-      background-color: #38A8AC;
-    }
-
-    &.step-3 {
-      background-color: #82444D;
-    }
+    background-color: desaturate(lighten(@brand-primary, 10%), 11%);
+    // transition: background-color 250ms linear;
 
     .lapse {
-        background-color: white;
+      min-height: 100px;
+      transition: left 450ms linear, width 450ms ease-out;
+      cursor: pointer;
+      background-color: @brand-primary;
+      opacity: 1;
+      &.sub {
+        opacity: 1;
+        background-color: desaturate(@brand-secondary, 10%);
+      }
+    }
+    .step-3 {
+      .lapse {
         opacity: 0.7;
-        min-height: 100px;
-        &:hover {
+        &.sub {
           opacity: 1;
         }
+      }
     }
   }
   .zoom-controls {
