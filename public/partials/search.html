@@ -16,3 +16,11 @@
         <p>{{event.description}}</p>
     </div>
 </div>
+<div class="controls">
+    <button class="back" ng-disabled="{{!canBack}}">
+        <i class="icon-minus-sign"></i>
+    </button>
+    <button class="forward" ng-disabled="{{!canForward}}">
+        <i class="icon-plus-sign"></i>
+    </button>
+</div>
