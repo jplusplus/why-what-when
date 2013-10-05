@@ -5,5 +5,6 @@ class SearchCtrl
 
         (@http.get '/cubancrisis.json').success (data) =>
             @scope.data = data
+            @scope.currentTopic = data
 
 angular.module('www').controller 'SearchCtrl', SearchCtrl
