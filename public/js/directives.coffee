@@ -3,6 +3,7 @@ MONTHS = [
     'February',
     'March',
     'April',
+    'May',
     'June',
     'July',
     'August',
@@ -123,7 +124,7 @@ MONTHS = [
 
                         return {
                             date : d
-                            label : month_str.substr(0,3) if month_str
+                            label : month_str.substr(0,3)
                         }
                 else if scope.zoomLevel is 3
                     current_month = new Date scope.data.start_date
