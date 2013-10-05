@@ -1,6 +1,11 @@
 @brand-primary: #252542;
 @brand-secondary: #AC79CD;
 
+@step0color: #B4D567;
+@step1color: #5CC48E;
+@step2color: #38A8AC;
+@step3color: #82444D;
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -61,10 +66,25 @@ nav  {
     text-align: center;
     font-size: 1.2em;
     .zoom-control {
-      cursor: pointer;
-    }
+      background: transparent;
+      border: none;
+      color: #888;
 
+      &:hover {
+        color: #dedede;
+      }
+    }
   }
+
+  .legend {
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 15px;
+    text-align:center;
+  }
+
 }
 
 .cards {

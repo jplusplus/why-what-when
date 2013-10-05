@@ -8,8 +8,11 @@
             </div>
         </div>
     </div>
+    <div class="legend">
+        <span ng-repeat="tick in lapseTicks() track by $index" ng-style="tickStyle(tick)">{{tick.label}}</span>
+    </div>
     <div class="zoom-controls">
-        <span class="zoom-control" ng-class="" ng-click="unzoomLapse()">-</span>&nbsp;/
-        <span class="zoom-control" ng-class="" ng-click="zoomLapse()">+</span>
+        <button class="zoom-control" ng-class="" ng-click="unzoomLapse()"><i class="icon-minus"></i></button>&nbsp;/
+        <button class="zoom-control" ng-class="" ng-click="zoomLapse()"><i class="icon-plus"></i></button>
     </div>
 </div>
