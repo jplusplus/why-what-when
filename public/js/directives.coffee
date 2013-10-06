@@ -177,6 +177,10 @@ MONTHS = [
             scope.unzoomLapse = ()->
                 if scope.zoomLevel > 0
                     scope.zoomLevel--
+                    params = 
+                        begin: null
+                        end: null
+                    $location.search(params)
 
                # return unless scope.data? and scope.data.sub_events?
             lapseRange   = getLapseRange() 
