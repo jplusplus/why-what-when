@@ -13,7 +13,7 @@ MONTHS = [
     'December'
 ]
 
-(angular.module 'www').directive 'timeline', [() ->
+(angular.module 'www').directive 'timeline', ['$location', ($location) ->
     restrict : "E"
     replace : yes
     templateUrl : "/partials/timeline.html"
@@ -78,6 +78,14 @@ MONTHS = [
                     start_date: (new Date()).toString()
                     end_date: yearRange[1].toString()
                 }
+
+            scope.loadLapse = (lapse)->
+                params = 
+                    begin: new Date(lapse.start_date).toISOString()
+                    end: new Date(lapse.end_date).toISOString()
+                $location.search(params)
+
+
             scope.getEvents = ()->
                 if scope.data?
                     [scope.data, getTodayEvent()]

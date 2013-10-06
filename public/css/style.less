@@ -1,5 +1,7 @@
 @brand-primary: #252542;
+@brand-primary-lighten: lighten(@brand-primary, 20%);
 @brand-secondary: #AC79CD;
+
 
 @step0color: #B4D567;
 @step1color: #5CC48E;
@@ -13,6 +15,12 @@
     background-color: @colour; // Fallback for older browsers
     background-color: @alphaColour; 
      
+}
+.logo {
+  float: right;
+  img {
+    height: 30px;
+  }
 }
 
 body {
@@ -32,18 +40,39 @@ a {
 }
 
 .primary {
-    color: lighten(@brand-primary, 20%);
+    color: @brand-primary-lighten;
 }
 
+.topic-extract {
+  padding-top: 20px;
+  padding-left: 25px;
+  #rightTriangle {
+    margin-top: 20px;
+
+    float:left;
+    width: 0;
+    height: 0;
+    border-left: 40px solid @brand-primary-lighten;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+  }
+  .extract-content {
+    float: left;
+    margin-left: 5px;
+  }
+}
 
 .timeline {
   overflow-x: hidden;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
 
   .timeline-holder {
     width: 100%;
     overflow: hidden;
     min-height: 100px;
-    background-color: desaturate(lighten(@brand-primary, 10%), 11%);
+    background-color: desaturate(lighten(@brand-primary, 15%), 15%);
     // transition: background-color 250ms linear;
 
     .lapse {
