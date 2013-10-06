@@ -1,7 +1,7 @@
 <div class="timeline">
-    <h1  ng-bind="lapseTitle()" class="timeline-title"></h1>
+    <h1  ng-bind="lapseTitle()" class="primary timeline-title"></h1>
     <div class="timeline-holder step-{{zoomLevel}}">
-        <div ng-class="zoomLevel < 3 ? 'lapse clickable' : ' lapse'" 
+        <div ng-class="getLapseClass(event)" 
              ng-repeat="event in getEvents() track by $index" 
              ng-style="lapseStyle(event)">
              <h3 class="lapse-title">{{event.title}}</h3>

@@ -1,7 +1,10 @@
-@brand-primary: #252542;
+
+@today: #FFEB00;
+@crysis: #FF2300;
+
+@brand-primary: @today;
 @brand-primary-lighten: lighten(@brand-primary, 20%);
 @brand-secondary: #AC79CD;
-
 
 @step0color: #B4D567;
 @step1color: #5CC48E;
@@ -72,20 +75,24 @@ a {
     width: 100%;
     overflow: hidden;
     min-height: 100px;
-    background-color: desaturate(lighten(@brand-primary, 15%), 15%);
+    background-color: #444;
     // transition: background-color 250ms linear;
 
     .lapse {
-      min-height: 100px;
+      &.today {
+        cursor: auto;
+        .rgba(@today, .7) !important;
 
+      }
+      min-height: 100px;
       transition: background-color 250ms linear, left 450ms linear, width 450ms ease-out;
       cursor: pointer;
 
-      .rgba(@brand-primary, 0);
+      .rgba(@crysis, 0);
       &.clickable {
-        .rgba(@brand-primary, .7);
+        .rgba(@crysis, .7);
         &:hover {
-          .rgba(@brand-primary, 1);
+          .rgba(@crysis, 1);
 
         }
       }

@@ -108,6 +108,14 @@ MONTHS = [
                     month_litteral = getLitteralMonth(month)
                     return "#{month_litteral} #{year}"
 
+            scope.getLapseClass = (lapse)->
+                klass = 'lapse' 
+                if scope.zoomLevel < 3
+                    klass += ' clickable'
+                if lapse.title is 'Today'
+                    klass += ' today'
+                return klass
+
             scope.lapseTicks = ()->
                 if scope.zoomLevel is 1
                     ticks = window.getDecadeRange(new Date scope.data.start_date)
