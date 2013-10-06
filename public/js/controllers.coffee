@@ -8,7 +8,7 @@ class SearchCtrl
 
         @scope.filters.
         search = do @location.search
-        @scope.typeahead_suggestions = ["Cuban missiles crisis"]
+        @scope.typeahead_suggestions = ["Cuba crisis"]
         @scope.topic = ''
 
         @scope.$watch 'topic', () =>
