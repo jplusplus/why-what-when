@@ -8,6 +8,8 @@ class SearchCtrl
 
         @scope.filters.
         search = do @location.search
+        @scope.typeahead_suggestions = ["Cuban missiles crisis"]
+        @scope.topic = ''
 
         (@http.get '/cubancrisis.json').success (data) =>
             @scope.data = data
