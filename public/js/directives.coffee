@@ -97,13 +97,13 @@ MONTHS = [
                 zoom = scope.zoomLevel
                 event_date = new Date(scope.data.start_date) if scope.data?
                 if zoom is 0
-                    return "Today"
+                    return "Today is October 6, 2013"
                 else if zoom is 1
                     lapse_year = (new Date()).getFullYear() - event_date.getFullYear()
                     return "Decade: Cuban missile crisis happened 52 years ago"
                 else if zoom is 2
                     year  = d3.time.year(event_date).getFullYear()
-                    return "#{year}"
+                    return "#{year}: Height of the crisis - 13 days in October"
                 else if zoom is 3
                     month = d3.time.month(event_date)
                     year  = d3.time.year(event_date).getFullYear()
