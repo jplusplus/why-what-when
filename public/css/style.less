@@ -80,6 +80,9 @@ a {
 
     .lapse {
       &.today {
+        h4 {
+          opacity: 1;
+        }
         cursor: auto;
         .rgba(@today, .7) !important;
 
@@ -99,15 +102,15 @@ a {
       &.sub {
         top: 0;
       }
-      h3 {
+      h4 {
         position: relative;
-        width: 300px;
+        width: 250px;
         z-index: 10;
         transition: opacity 250ms ease-in;
         opacity: 0;
       }
       &.clickable:hover {
-        > h3 {
+        > h4 {
           opacity: 1;
         }
       }
