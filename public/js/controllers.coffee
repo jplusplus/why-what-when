@@ -11,9 +11,11 @@ class SearchCtrl
         @scope.typeahead_suggestions = ["Cuban missiles crisis"]
         @scope.topic = ''
 
-        (@http.get '/cubancrisis.json').success (data) =>
-            @scope.data = data
-            @scope.currentTopic = data
+        @scope.$watch 'topic', () =>
+            if @scope.topic? and @scope.topic isnt ''
+                (@http.get '/cubancrisis.json').success (data) =>
+                    @scope.data = data
+                    @scope.currentTopic = data
 
         @scope.$watch ()=>
                 @location.search()
