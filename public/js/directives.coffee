@@ -52,7 +52,6 @@ MONTHS = [
                     leftRaw: beginOffsetX
                     width: width
                     widthRaw: widthRaw
-                    height: workspaceHeight 
                 return style
 
             getLitteralMonth = (date)->
