@@ -100,7 +100,7 @@ MONTHS = [
                     return "Today is October 6, 2013"
                 else if zoom is 1
                     lapse_year = (new Date()).getFullYear() - event_date.getFullYear()
-                    return "Decade: Cuban missile crisis happened 52 years ago"
+                    return "Decade: Cuban missile crisis happened #{lapse_year} years ago"
                 else if zoom is 2
                     year  = d3.time.year(event_date).getFullYear()
                     return "#{year}: Height of the crisis - 13 days in October"
