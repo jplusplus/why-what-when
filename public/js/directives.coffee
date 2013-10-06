@@ -31,7 +31,7 @@ MONTHS = [
                 scope.$watch monitor, ->update()
 
         update = ()->
-            if scope.data?
+            if scope.data? and scope.zoomLevel is 0
                 scope.zoomLevel = 1
             scope.lapseStyle = (lapse, parent_lapse)->
                 # console.log "lapseStyle(", lapse, ")"
@@ -100,7 +100,7 @@ MONTHS = [
                     return "Today"
                 else if zoom is 1
                     lapse_year = (new Date()).getFullYear() - event_date.getFullYear()
-                    return "Decade of #{lapse_year} years ago"
+                    return "Decade: Cuban missile crisis happened 52 years ago"
                 else if zoom is 2
                     year  = d3.time.year(event_date).getFullYear()
                     return "#{year}"
@@ -170,6 +170,7 @@ MONTHS = [
                 return style
 
             scope.zoomLapse = ()->
+                console.log "zoomLapse !"
                 if scope.zoomLevel < MAX_ZOOM_LEVEL
                     scope.zoomLevel++
 
