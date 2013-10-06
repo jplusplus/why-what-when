@@ -3,7 +3,7 @@
 angular
     .module('www', [
         # "restangular", 
-        "wwwServices", "wwwFilters", "ngCookies"
+        "wwwServices", "wwwFilters", "ngCookies", 'ui.bootstrap'
     ])
     .run(
         [             
